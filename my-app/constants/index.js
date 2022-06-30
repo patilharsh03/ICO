@@ -1,4 +1,4 @@
-const TOKEN_CONTRACT_ABI = [
+export const TOKEN_CONTRACT_ABI = [
     {
       "inputs": [
         {
@@ -419,9 +419,9 @@ const TOKEN_CONTRACT_ABI = [
       "type": "receive"
     }
   ]
-const TOKEN_CONTRACT_ADDRESS = "0xC901c0B70dc235Be5d40984bEf35B323de66AD31"
-const NFT_CONTRACT_ADDRESS = "0x25EAFc55B5b38E0aE47c8D0f994338E631Be0c2C"
-const NFT_CONTRACT_ABI = [
+export const TOKEN_CONTRACT_ADDRESS = "0x85beB04816ce283bDf021D7e8b51a5375f2926ac"
+export const NFT_CONTRACT_ADDRESS = "0x25EAFc55B5b38E0aE47c8D0f994338E631Be0c2C"
+export const NFT_CONTRACT_ABI = [
     {
       "inputs": [
         {
