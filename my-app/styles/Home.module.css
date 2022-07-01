@@ -52,6 +52,19 @@
   cursor: pointer;
   margin-bottom: 2%;
 }
+
+.button1 {
+  border-radius: 4px;
+  background-color: blue;
+  border: none;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 5px;
+  width: 100px;
+  cursor: pointer;
+  margin-bottom: 2%;
+}
+
 @media (max-width: 1000px) {
   .main {
     width: 100%;
