@@ -214,7 +214,6 @@ export default function Home() {
       getTotalTokensMinted();
       getBalanceOfCryptoDevTokens();
       getTokensToBeClaimed();
-      withdrawCoins();
     }
   }, [walletConnected])
 
@@ -290,7 +289,7 @@ export default function Home() {
               You have minted {utils.formatEther(balanceOfCryptoDevTokens)} Crypto Dev Tokens
             </div>
             <div className={styles.description}>
-              Overall {utils.formatEther(tokensMinted)}/1000 have been minted
+              Overall {utils.formatEther(tokensMinted)}/10000 have been minted
             </div>
             {renderButton()}
           </div>
