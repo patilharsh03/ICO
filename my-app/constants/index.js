@@ -415,18 +415,11 @@ export const TOKEN_CONTRACT_ABI = [
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "withdraw",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
     "stateMutability": "payable",
     "type": "receive"
   }
 ]
-export const TOKEN_CONTRACT_ADDRESS = "0x85beB04816ce283bDf021D7e8b51a5375f2926ac"
+export const TOKEN_CONTRACT_ADDRESS = "0x5D17F8691Bc62555c0ED20E499D9576B49160341"
 export const NFT_CONTRACT_ADDRESS = "0x25EAFc55B5b38E0aE47c8D0f994338E631Be0c2C"
 export const NFT_CONTRACT_ABI = [
     {

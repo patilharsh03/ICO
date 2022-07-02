@@ -19,7 +19,6 @@ export default function Home() {
   const [tokenAmount, setTokenAmount] = useState(zero)
   const [loading, setLoading] = useState(false);
   const [tokensToBeClaimed, setTokensToBeClaimed] = useState(zero);
-  const [isOwner, setIsOwner] = useState(false)
 
   const getProviderOrSigner = async (needSigner = false) => {
     const provider = await web3ModalRef.current.connect();
@@ -145,43 +144,6 @@ export default function Home() {
     }
   }
 
-  const getOwner = async () => {
-    try {
-      const provider = await getProviderOrSigner();
-      const tokenContract = new Contract (
-        TOKEN_CONTRACT_ADDRESS,
-        TOKEN_CONTRACT_ABI,
-        provider
-      );
-      const _owner = await tokenContract.owner();
-      const signer = await getProviderOrSigner(true);
-      const address = await signer.getAddress();
-      if (address.toLowerCase() === _owner.toLowerCase()) {
-        setIsOwner(true)
-      }
-    } catch (err) {
-      console.error(err.message)
-    }
-  }
-
-  const withdrawCoins = async () => {
-    try {
-      const signer = await getProviderOrSigner(true);
-      const tokenContract = new Contract (
-        TOKEN_CONTRACT_ADDRESS,
-        TOKEN_CONTRACT_ABI,
-        signer
-      );
-      const tx = await tokenContract.withdraw();
-      setLoading(true);
-      await tx.wait();
-      setLoading(false);
-      await getOwner()
-    } catch (err) {
-      console.error(err);
-    }
-  }
-
   const claimCryptoDevTokens = async () => {
     try {
       const signer = await getProviderOrSigner(true);
@@ -222,16 +184,6 @@ export default function Home() {
       return (
         <div>
           <button className={styles.button}>loading...</button>
-        </div>
-      );
-    }
-
-    if (walletConnected && isOwner) {
-      return (
-        <div>
-          <button className={styles.button1} onClick={withdrawCoins}>
-            Withdraw Coins
-          </button>
         </div>
       );
     }
